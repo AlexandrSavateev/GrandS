@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="submit_form()">
+<form  name="myform" action="https://securesandbox.webpay.by/" method="post">
+<input type ="hidden" name="*scart">
+<input type="hidden" name="wsb_version" value="2">
+<input type="hidden" name="wsb_storeid" value="{{ webpay.wsb_storeid }}" >
+<input type="hidden" name="wsb_store" value="{{ webpay.wsb_store }}" >
+<input type="hidden" name="wsb_order_num" value= "3" >
+<input type="hidden" name="wsb_test" value="1" >
+<input type="hidden" name="wsb_currency_id" value="BYN" >
+<input type ="hidden" name="wsb_seed" value={{ seed }}>
+{#<input type ="hidden" name="wsb_customer_name" value="{{ order.client.get_fullname }}">#}
+{#<input type ="hidden" name="wsb_customer_address" value="{{ order.client.get_address }}">#}
+
+{#<input type="hidden" name="wsb_return_url" value="{{webpay.return_url}}">#}
+{#<input type ="hidden" name="wsb_cancel_return_url" value={{webpay.cancel_return_url}}>#}
+{#<input type="hidden" name="wsb_notify_url" value="{{webpay.notification_url}}">#}
+<input type="hidden" name="wsb_email" value="{{ order.client.email}}" >
+<input type ="hidden" name="wsb_invoice_item_name[]" value="{{ order }}">
+<input type ="hidden" name="wsb_invoice_item_quantity[]" value="1">
+<input type ="hidden" name="wsb_invoice_item_price[]" value="{{ webpay.total }}">
+
+<input type="hidden" name="wsb_total" value="{{ webpay.total }}" >
+<input type ="hidden" name="wsb_signature"
+value="{{ webpay.signature }}" >
+
+<input type="submit" value="Купить" style="display: none">
+</form>
+</body>
+    <script type="text/javascript">
+        function submit_form() {
+            document.myform.submit();
+
+    }
+    </script>
+</html>
