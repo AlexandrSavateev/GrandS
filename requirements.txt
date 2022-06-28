@@ -1,6 +1,6 @@
 aiodns==1.1.1
 aiohttp==3.4.4
-arrow==0.12.1
+arrow==0.15.1
 cchardet==2.1.1
 cryptography==2.3.1
 requests==2.19.1
