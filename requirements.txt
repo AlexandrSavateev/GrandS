@@ -6,7 +6,7 @@ cryptography==2.3.1
 requests==2.19.1
 furl==1.2
 typing==3.6.4
-wheel==0.32.2
+wheel==0.38.1
 factory-boy==2.11.1
 
 Django==2.1.3
